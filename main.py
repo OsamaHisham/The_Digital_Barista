@@ -21,7 +21,6 @@ from langchain_core.prompts import (ChatPromptTemplate, MessagesPlaceholder,
 from langchain_core.tools import tool
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from pydantic import BaseModel
-from fastapi.middleware.cors import CORSMiddleware
 
 # -------------------------------------------
 
@@ -35,16 +34,12 @@ app = FastAPI(
 
 # Add CORS middleware to allow React frontend to communicate with backend
 app.add_middleware(
-    CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",      # React dev server (Windows/Mac/Linux)
         "http://127.0.0.1:3000",      # React dev server (IP format)
         "http://localhost:8000",      # Same origin (for testing)
         "http://127.0.0.1:8000",      # Same origin (IP format)
-        "https://the-digital-barista.vercel.app/", # For the Front-End communication
     ],
-    CORSMiddleware,
-    allow_origins=origins,            # List of origins that are allowed
     allow_credentials=True,
     allow_methods=["*"],              # Allow all HTTP methods (GET, POST, OPTIONS, etc.)
     allow_headers=["*"],              # Allow all headers

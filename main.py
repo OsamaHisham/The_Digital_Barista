@@ -34,11 +34,13 @@ app = FastAPI(
 
 # Add CORS middleware to allow React frontend to communicate with backend
 app.add_middleware(
+    CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",      # React dev server (Windows/Mac/Linux)
         "http://127.0.0.1:3000",      # React dev server (IP format)
         "http://localhost:8000",      # Same origin (for testing)
         "http://127.0.0.1:8000",      # Same origin (IP format)
+        "https://the-digital-barista-backend.onrender.com/",  # Deployed backend URL
     ],
     allow_credentials=True,
     allow_methods=["*"],              # Allow all HTTP methods (GET, POST, OPTIONS, etc.)

@@ -40,7 +40,8 @@ app.add_middleware(
         "http://127.0.0.1:3000",      # React dev server (IP format)
         "http://localhost:8000",      # Same origin (for testing)
         "http://127.0.0.1:8000",      # Same origin (IP format)
-        "https://the-digital-barista-backend.onrender.com/",  # Deployed backend URL
+        # "https://the-digital-barista-backend.onrender.com",  # Deployed backend URL
+        "https://the-digital-barista.vercel.app",            # Deployed frontend URL
     ],
     allow_credentials=True,
     allow_methods=["*"],              # Allow all HTTP methods (GET, POST, OPTIONS, etc.)

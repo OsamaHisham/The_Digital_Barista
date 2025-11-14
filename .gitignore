@@ -1,0 +1,11 @@
+virtualEnv/
+__pycache__/
+.env
+*.pyc
+.DS_Store
+.pytest_cache/
+node_modules/
+.git/
+*.db
+.env.local
+.env.*.local
